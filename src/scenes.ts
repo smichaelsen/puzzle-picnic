@@ -7,6 +7,9 @@ export interface Scene {
   emoji: string;
 }
 
+export const SCENE_BUCKET_SIZE = 3;
+export const REQUIRED_SOLVES_PER_BUCKET = 2;
+
 const sceneAsset = (filename: string) => `${import.meta.env.BASE_URL}scenes/${filename}`;
 
 export const SCENES: Scene[] = [
@@ -83,3 +86,20 @@ export const SCENES: Scene[] = [
     emoji: '🌌',
   },
 ];
+
+export function sceneBuckets(): Scene[][] {
+  return Array.from({ length: Math.ceil(SCENES.length / SCENE_BUCKET_SIZE) }, (_, bucketIndex) =>
+    SCENES.slice(bucketIndex * SCENE_BUCKET_SIZE, (bucketIndex + 1) * SCENE_BUCKET_SIZE),
+  );
+}
+
+export function solvedInBucket(bucketIndex: number, solvedSceneIds: ReadonlySet<string>): number {
+  const start = bucketIndex * SCENE_BUCKET_SIZE;
+  return SCENES.slice(start, start + SCENE_BUCKET_SIZE).filter((scene) => solvedSceneIds.has(scene.id)).length;
+}
+
+export function isSceneUnlocked(sceneIndex: number, solvedSceneIds: ReadonlySet<string>): boolean {
+  const bucketIndex = Math.floor(sceneIndex / SCENE_BUCKET_SIZE);
+  if (bucketIndex === 0) return true;
+  return solvedInBucket(bucketIndex - 1, solvedSceneIds) >= REQUIRED_SOLVES_PER_BUCKET;
+}

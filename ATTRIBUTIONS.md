@@ -9,7 +9,7 @@ The nine bundled scene illustrations were created specifically for this project 
 - `public/scenes/seaside-friends.webp` — “Seaside Friends”
 - `public/scenes/moonlight-music.webp` — “Moonlight Music”
 - `public/scenes/sky-garden.webp` — “Sky Garden”
-- `public/scenes/pocket-raceway.webp` — “Pocket Raceway,” mid-century screen-print and gouache race-car scene
+- `public/scenes/pocket-raceway.webp` — “Pocket Raceway,” semi-realistic cinematic automotive concept illustration with a single coherent closed circuit
 - `public/scenes/coral-carnival.webp` — “Coral Carnival,” layered cut-paper ocean scene
 - `public/scenes/dinosaur-valley.webp` — “Dinosaur Valley,” watercolor and colored-pencil prehistoric scene
 - `public/scenes/little-moon-base.webp` — “Little Moon Base,” handcrafted clay-diorama space scene

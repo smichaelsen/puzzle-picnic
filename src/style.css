@@ -171,6 +171,24 @@ button:focus-visible {
   font-size: 0.92rem;
 }
 
+.collection-progress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border: 2px solid #c8e6dd;
+  border-radius: 99px;
+  background: #edfaf5;
+  color: #477268 !important;
+  text-align: left;
+}
+
+.collection-progress strong { color: var(--teal); font-size: 1.2rem; line-height: 1; }
+.collection-progress span,
+.collection-progress small { display: block; }
+.collection-progress span { font-size: 0.72rem; font-weight: 900; line-height: 0.9; }
+.collection-progress small { margin-top: 3px; color: #7f8f89; font-size: 0.56rem; letter-spacing: 0.04em; text-transform: uppercase; }
+
 .step-pill {
   display: grid;
   width: 31px;
@@ -189,6 +207,8 @@ button:focus-visible {
   gap: clamp(14px, 2.5vw, 26px);
 }
 
+.scene-shelf + .scene-shelf { margin-top: clamp(20px, 3vw, 30px); }
+
 .scene-card {
   position: relative;
   display: grid;
@@ -206,11 +226,21 @@ button:focus-visible {
 
 .scene-card:hover { transform: translateY(-5px) rotate(-0.3deg); box-shadow: 0 11px 0 color-mix(in srgb, var(--scene-color), #544328 35%), 0 18px 42px rgba(77, 55, 29, 0.2); }
 .scene-card:active { transform: translateY(3px); box-shadow: 0 3px 0 color-mix(in srgb, var(--scene-color), #544328 35%); }
+.scene-card.solved { box-shadow: 0 7px 0 #258c78, var(--shadow), 0 0 0 4px #bdeade; }
+.scene-card.locked { cursor: default; filter: saturate(0.68); }
+.scene-card.locked:hover,
+.scene-card.locked:active { transform: none; box-shadow: 0 7px 0 color-mix(in srgb, var(--scene-color), #544328 35%), var(--shadow); }
 .scene-image { position: relative; grid-column: 1 / -1; display: block; aspect-ratio: 4 / 3; overflow: hidden; }
 .scene-image::after { content: ""; position: absolute; inset: auto 0 0; height: 28%; background: linear-gradient(transparent, rgba(20, 16, 10, 0.16)); }
 .scene-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 300ms ease; }
 .scene-card:hover img { transform: scale(1.025); }
 .scene-number { position: absolute; z-index: 1; left: 13px; top: 13px; display: grid; width: 35px; aspect-ratio: 1; place-items: center; border: 3px solid white; border-radius: 50%; background: var(--scene-color); color: white; box-shadow: 0 3px 8px #0003; font-weight: 900; }
+.solved-badge { position: absolute; z-index: 3; right: 11px; top: 11px; display: flex; align-items: center; gap: 5px; padding: 7px 10px; border: 3px solid white; border-radius: 99px; background: #249d84; color: white; box-shadow: 0 4px 10px #153c3352; font-size: 0.69rem; font-weight: 900; letter-spacing: 0.03em; text-transform: uppercase; }
+.solved-badge span { display: grid; width: 17px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: white; color: #249d84; }
+.lock-overlay { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(49, 43, 39, 0.62); color: white; backdrop-filter: blur(1.5px); }
+.lock-overlay b { display: grid; width: 48px; aspect-ratio: 1; place-items: center; margin-bottom: 6px; border: 2px solid #ffffff88; border-radius: 50%; background: #271f1a91; font-size: 1.35rem; }
+.lock-overlay strong { font-family: Georgia, serif; font-size: 1.1rem; }
+.lock-overlay small { margin-top: 3px; color: #fff4d7; font-size: 0.7rem; font-weight: 800; }
 .scene-copy { min-width: 0; padding: 12px 4px 0 17px; }
 .scene-copy strong,
 .scene-copy small { display: block; }
@@ -393,6 +423,7 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 .completion-stars { display: block; margin-bottom: 12px; color: #f3b925; font-size: 2rem; letter-spacing: 0.3em; }
 .completion-card h2 { margin: 0; color: var(--coral); font-family: Georgia, serif; font-size: clamp(2.7rem, 9vw, 4.2rem); line-height: 1; }
 .completion-card p:not(.eyebrow) { margin: 10px 0 23px; color: #78634f; }
+.completion-card .unlock-message { margin: -10px 0 22px !important; padding: 10px 13px; border-radius: 14px; background: #e2f6ee; color: #247b6b !important; font-weight: 900; }
 .completion-card button { min-height: 56px; padding: 0 20px; border: 0; border-radius: 18px; background: var(--teal); color: white; box-shadow: 0 6px 0 #24796f; font-weight: 900; }
 .completion-card button span { margin-left: 9px; font-size: 1.5rem; }
 .confetti-layer { position: fixed; z-index: 950; inset: 0; overflow: hidden; pointer-events: none; }
@@ -419,7 +450,8 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
   .scene-image { grid-column: auto; grid-row: 1; height: 100%; aspect-ratio: auto; }
   .scene-copy { align-self: center; padding: 8px 5px 8px 14px; }
   .scene-go { padding: 0 13px 0 3px; }
-  .section-heading > p { display: none; }
+  .section-heading > p:not(.collection-progress) { display: none; }
+  .collection-progress { display: flex; padding: 6px 10px; }
   .home-footer { flex-wrap: wrap; }
   .dialog-art { height: 135px; }
   .difficulty-list { grid-template-columns: 1fr; }

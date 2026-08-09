@@ -19,4 +19,4 @@ npm run lint
 npm run build
 ```
 
-Progress is saved in local storage. No backend or runtime network service is required.
+Puzzle progress and solved-scene unlocks are saved in local storage. Complete two pictures in each three-scene bucket to unlock the next set. No backend or runtime network service is required.

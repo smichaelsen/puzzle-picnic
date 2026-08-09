@@ -1,8 +1,8 @@
 import { DIFFICULTIES, createPiecePath, createPuzzlePieces, difficultyById, isEdgePiece, isPuzzleComplete, isWithinSnap, shuffleIds } from './puzzle';
 import type { DifficultyId, PuzzlePiece } from './puzzle';
-import { SCENES } from './scenes';
+import { REQUIRED_SOLVES_PER_BUCKET, SCENE_BUCKET_SIZE, SCENES, isSceneUnlocked, sceneBuckets, solvedInBucket } from './scenes';
 import type { Scene } from './scenes';
-import { clearGame, loadGame, saveGame } from './state';
+import { clearGame, loadGame, loadSolvedScenes, markSceneSolved, saveGame } from './state';
 import type { SavedGame } from './state';
 
 type View = 'home' | 'play';
@@ -78,6 +78,8 @@ export class PuzzleApp {
     this.cleanupPlayView();
     const saved = loadGame();
     const resumable = saved && saved.placed.length < difficultyById(saved.difficultyId).pieces;
+    const knownSceneIds = new Set(SCENES.map((scene) => scene.id));
+    const solvedSceneIds = new Set(loadSolvedScenes().filter((sceneId) => knownSceneIds.has(sceneId)));
 
     this.root.innerHTML = `
       <main class="home-view">
@@ -101,17 +103,39 @@ export class PuzzleApp {
         <section class="scene-section" aria-labelledby="choose-heading">
           <div class="section-heading">
             <div><p class="step-pill">1</p><h2 id="choose-heading">Choose your adventure</h2></div>
-            <p>Tap a picture to begin</p>
+            <p class="collection-progress"><strong>${solvedSceneIds.size}</strong><span>of ${SCENES.length}<small>pictures solved</small></span></p>
           </div>
-          <div class="scene-grid">
-            ${SCENES.map(
-              (scene, index) => `
-                <button class="scene-card scene-${index + 1}" type="button" data-scene="${scene.id}" style="--scene-color:${scene.color}">
-                  <span class="scene-image"><img src="${scene.src}" alt="" draggable="false" /><span class="scene-number">${index + 1}</span></span>
-                  <span class="scene-copy"><strong>${scene.title}</strong><small>${scene.subtitle}</small></span>
-                  <span class="scene-go" aria-hidden="true">›</span>
-                </button>`,
-            ).join('')}
+          <div class="scene-shelves">
+            ${sceneBuckets()
+              .map((bucket, bucketIndex) => {
+                const previousSolved = bucketIndex === 0 ? 0 : solvedInBucket(bucketIndex - 1, solvedSceneIds);
+                return `<div class="scene-shelf" data-bucket="${bucketIndex + 1}">
+                  <div class="scene-grid">
+                    ${bucket
+                      .map((scene, indexInBucket) => {
+                        const index = bucketIndex * SCENE_BUCKET_SIZE + indexInBucket;
+                        const solved = solvedSceneIds.has(scene.id);
+                        const unlocked = isSceneUnlocked(index, solvedSceneIds);
+                        return `<button class="scene-card scene-${index + 1}${solved ? ' solved' : ''}${unlocked ? '' : ' locked'}" type="button" data-scene="${scene.id}" data-solved="${solved}" data-unlocked="${unlocked}" style="--scene-color:${scene.color}" ${unlocked ? '' : 'disabled'}>
+                          <span class="scene-image">
+                            <img src="${scene.src}" alt="" draggable="false" />
+                            <span class="scene-number">${index + 1}</span>
+                            ${solved ? '<span class="solved-badge"><span aria-hidden="true">✓</span> Solved</span>' : ''}
+                            ${
+                              unlocked
+                                ? ''
+                                : `<span class="lock-overlay"><b aria-hidden="true">🔒</b><strong>Locked</strong><small>${previousSolved} of ${REQUIRED_SOLVES_PER_BUCKET} solved above</small></span>`
+                            }
+                          </span>
+                          <span class="scene-copy"><strong>${scene.title}</strong><small>${scene.subtitle}</small></span>
+                          <span class="scene-go" aria-hidden="true">${unlocked ? '›' : '•'}</span>
+                        </button>`;
+                      })
+                      .join('')}
+                  </div>
+                </div>`;
+              })
+              .join('')}
           </div>
         </section>
         <footer class="home-footer"><span>Made for little hands</span><span aria-hidden="true">•</span><span>Works offline</span><span aria-hidden="true">•</span><span>Progress saves itself</span></footer>
@@ -600,11 +624,19 @@ export class PuzzleApp {
   private completeGame() {
     if (!this.selectedScene || this.view !== 'play') return;
     this.sounds.complete();
+    const solvedBefore = new Set(loadSolvedScenes());
+    const solvedAfter = new Set(markSceneSolved(this.selectedScene.id));
+    const sceneIndex = SCENES.findIndex((scene) => scene.id === this.selectedScene!.id);
+    const nextBucketStart = (Math.floor(sceneIndex / SCENE_BUCKET_SIZE) + 1) * SCENE_BUCKET_SIZE;
+    const unlockedNewBucket =
+      nextBucketStart < SCENES.length &&
+      !isSceneUnlocked(nextBucketStart, solvedBefore) &&
+      isSceneUnlocked(nextBucketStart, solvedAfter);
     clearGame();
     this.launchConfetti();
     const overlay = document.createElement('div');
     overlay.className = 'completion-card';
-    overlay.innerHTML = `<div><span class="completion-stars" aria-hidden="true">★ ✦ ★</span><p class="eyebrow">Every piece found its home</p><h2>You did it!</h2><p>${this.selectedScene.title} is complete.</p><button type="button">Choose another picture <span>›</span></button></div>`;
+    overlay.innerHTML = `<div><span class="completion-stars" aria-hidden="true">★ ✦ ★</span><p class="eyebrow">Every piece found its home</p><h2>You did it!</h2><p>${this.selectedScene.title} is complete.</p>${unlockedNewBucket ? '<p class="unlock-message">🔓 Three new pictures unlocked!</p>' : ''}<button type="button">Choose another picture <span>›</span></button></div>`;
     overlay.querySelector('button')?.addEventListener('click', () => {
       overlay.remove();
       this.showHome();

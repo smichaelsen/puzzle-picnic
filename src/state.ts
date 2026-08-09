@@ -1,6 +1,7 @@
 import type { DifficultyId } from './puzzle';
 
 const STORAGE_KEY = 'puzzle-picnic-progress-v1';
+const SOLVED_STORAGE_KEY = 'puzzle-picnic-solved-scenes-v1';
 
 export interface SavedGame {
   sceneId: string;
@@ -46,4 +47,26 @@ export function clearGame(): void {
   } catch {
     // Ignore unavailable storage.
   }
+}
+
+export function loadSolvedScenes(): string[] {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SOLVED_STORAGE_KEY) ?? '[]') as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return [...new Set(parsed.filter((sceneId): sceneId is string => typeof sceneId === 'string'))];
+  } catch {
+    return [];
+  }
+}
+
+export function markSceneSolved(sceneId: string): string[] {
+  const solved = new Set(loadSolvedScenes());
+  solved.add(sceneId);
+  const result = [...solved];
+  try {
+    localStorage.setItem(SOLVED_STORAGE_KEY, JSON.stringify(result));
+  } catch {
+    // Unlock progress is best-effort when storage is unavailable.
+  }
+  return result;
 }
