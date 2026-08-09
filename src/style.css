@@ -306,7 +306,7 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 
 .game-layout {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) 230px;
+  grid-template-rows: minmax(0, 1fr) 250px;
   min-height: 0;
 }
 
@@ -317,7 +317,7 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
   min-height: 0;
   align-items: center;
   justify-content: center;
-  padding: 12px 14px 58px;
+  padding: 12px 14px;
   background:
     radial-gradient(circle, rgba(159, 133, 91, 0.17) 1.3px, transparent 1.5px) 0 0 / 22px 22px,
     #f6edda;
@@ -336,15 +336,16 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 
 .board-frame.drag-active { transform: scale(1.008); box-shadow: 0 8px 0 #37a997, 0 0 0 6px #a8e5d9, 0 18px 45px #3c7b6a3d; }
 .board-canvas { display: block; width: 100%; height: 100%; }
-.board-tools { position: absolute; bottom: 10px; left: 50%; display: flex; gap: 9px; transform: translateX(-50%); }
-.board-tools button { display: flex; align-items: center; gap: 6px; padding: 0 17px; border-radius: 16px; background: #fff; box-shadow: 0 4px 0 #d7c4a5, 0 7px 14px #5e482c22; font-size: 0.82rem; font-weight: 900; white-space: nowrap; }
+.board-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 8px; padding-top: 8px; border-top: 2px solid #eee0c8; }
+.board-tools button { display: flex; width: 100%; align-items: center; justify-content: center; gap: 6px; padding: 0 12px; border-radius: 14px; background: #fff; box-shadow: 0 3px 0 #d7c4a5, 0 6px 12px #5e482c1c; font-size: 0.82rem; font-weight: 900; white-space: nowrap; }
 .board-tools button.active { background: #dff7ef; box-shadow: 0 4px 0 #92cabc, 0 7px 14px #326f5e20; }
 .hint-target { position: absolute; z-index: 2; border: 4px solid #ffd43d; border-radius: 35%; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 7px #ffcf32); transform: scale(0.65); }
 .hint-target.visible { opacity: 1; animation: hint-pulse 850ms ease-in-out infinite alternate; }
 
 .piece-tray {
+  position: relative;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   min-width: 0;
   min-height: 0;
   padding: 13px 17px max(13px, env(safe-area-inset-bottom));
@@ -366,7 +367,7 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 .piece-button.dragging { opacity: 0.2; }
 .piece-button.hinted { background: #fff0a6; box-shadow: 0 0 0 4px #f6c92f; animation: piece-hint 620ms ease-in-out infinite alternate; }
 .piece-button canvas { display: block; pointer-events: none; }
-.tray-empty { display: none; align-self: center; margin: 20px; color: #6b8a7b; font-family: Georgia, serif; text-align: center; }
+.tray-empty { display: none; position: absolute; inset: 52% 20px auto; margin: 0; color: #6b8a7b; font-family: Georgia, serif; text-align: center; transform: translateY(-50%); }
 .tray-empty.visible { display: block; }
 .drag-preview { position: fixed; z-index: 1000; left: 0; top: 0; pointer-events: none; filter: drop-shadow(0 12px 9px #35281755); will-change: transform; }
 
@@ -404,7 +405,7 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 @keyframes confetti-fall { to { transform: translate3d(0, calc(100vh + 60px), 0) rotate(var(--spin)); } }
 
 @media (orientation: landscape) and (min-width: 700px) {
-  .game-layout { grid-template-columns: minmax(0, 1fr) clamp(300px, 34vw, 390px); grid-template-rows: minmax(0, 1fr); }
+  .game-layout { grid-template-columns: minmax(0, 1fr) clamp(285px, 30vw, 340px); grid-template-rows: minmax(0, 1fr); }
   .piece-tray { border-top: 0; border-left: 3px solid #dfceb0; box-shadow: -6px 0 20px #5e482c12; }
   .tray-grid { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); grid-auto-rows: 72px; }
 }
@@ -425,11 +426,13 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
   .difficulty-option { grid-template-columns: auto 1fr auto; grid-template-rows: 1fr; align-items: center; min-height: 82px; text-align: left; }
   .difficulty-option span strong { margin-top: 0; }
   .difficulty-option > b { margin: 0; text-align: center; }
-  .game-header { grid-template-columns: auto minmax(0, 1fr) auto auto; }
-  .progress-wrap { grid-column: 1 / -1; grid-row: 2; }
-  .game-header { min-height: 102px; }
   .header-button > span:last-child { display: none; }
   .header-button { width: 48px; justify-content: center; padding: 0; }
+}
+
+@media (max-width: 480px) {
+  .game-header { grid-template-columns: auto minmax(0, 1fr) auto auto; min-height: 102px; }
+  .progress-wrap { grid-column: 1 / -1; grid-row: 2; }
   .progress-track { width: 100%; }
 }
 
@@ -438,7 +441,6 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
   .round-button,
   .header-button { min-height: 42px; height: 42px; }
   .game-title > span { width: 39px; }
-  .board-stage { padding-bottom: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

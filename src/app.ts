@@ -233,10 +233,6 @@ export class PuzzleApp {
               <canvas class="board-canvas"></canvas>
               <div class="hint-target" aria-hidden="true"></div>
             </div>
-            <div class="board-tools">
-              <button type="button" data-action="hint"><span aria-hidden="true">✨</span> Hint</button>
-              <button type="button" data-action="ghost" class="active"><span aria-hidden="true">👀</span> Guide</button>
-            </div>
           </section>
           <aside class="piece-tray" aria-label="Loose puzzle pieces">
             <div class="tray-heading">
@@ -248,6 +244,10 @@ export class PuzzleApp {
               <button type="button" data-filter="edges">Edge pieces</button>
             </div>
             <div class="tray-grid"></div>
+            <div class="board-tools">
+              <button type="button" data-action="hint"><span aria-hidden="true">✨</span> Hint</button>
+              <button type="button" data-action="ghost" class="active"><span aria-hidden="true">👀</span> Guide</button>
+            </div>
             <p class="tray-empty">All the pieces here are home! 🎉</p>
           </aside>
         </div>
@@ -557,7 +557,7 @@ export class PuzzleApp {
       target.style.height = `${100 / difficulty.rows}%`;
       target.classList.add('visible');
     }
-    this.hintTimer = window.setTimeout(() => this.hideHint(), 5500);
+    this.hintTimer = window.setTimeout(() => this.hideHint(), 15_000);
   }
 
   private hideHint() {
