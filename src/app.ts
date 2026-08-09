@@ -1,5 +1,5 @@
-import { DIFFICULTIES, createPiecePath, createPuzzlePieces, difficultyById, isEdgePiece, isPuzzleComplete, isWithinSnap, shuffleIds } from './puzzle';
-import type { DifficultyId, PuzzlePiece } from './puzzle';
+import { DIFFICULTIES, createPiecePath, createPuzzlePieces, difficultyById, isEdgePiece, isPuzzleComplete, rasterizeBoardCell, shuffleIds } from './puzzle';
+import type { DifficultyId, GridCell, PuzzlePiece } from './puzzle';
 import { REQUIRED_SOLVES_PER_BUCKET, SCENE_BUCKET_SIZE, SCENES, isSceneUnlocked, sceneBuckets, solvedInBucket } from './scenes';
 import type { Scene } from './scenes';
 import { clearGame, loadGame, loadSolvedScenes, markSceneSolved, saveGame } from './state';
@@ -256,6 +256,7 @@ export class PuzzleApp {
             <div class="board-frame">
               <canvas class="board-canvas"></canvas>
               <div class="hint-target" aria-hidden="true"></div>
+              <div class="drop-target" aria-hidden="true"></div>
             </div>
           </section>
           <aside class="piece-tray" aria-label="Loose puzzle pieces">
@@ -487,13 +488,8 @@ export class PuzzleApp {
     if (!this.drag || event.pointerId !== this.drag.pointerId || !this.boardCanvas || !this.game) return;
     event.preventDefault();
     const piece = this.pieces[this.drag.pieceId];
-    const rect = this.boardCanvas.getBoundingClientRect();
-    const difficulty = difficultyById(this.game.difficultyId);
-    const cellWidth = rect.width / difficulty.cols;
-    const cellHeight = rect.height / difficulty.rows;
-    const targetX = rect.left + (piece.col + 0.5) * cellWidth;
-    const targetY = rect.top + (piece.row + 0.5) * cellHeight;
-    const accepted = isWithinSnap(event.clientX, event.clientY, targetX, targetY, cellWidth, cellHeight);
+    const cell = this.draggedCellAt(event.clientX, event.clientY);
+    const accepted = cell?.row === piece.row && cell.col === piece.col;
     const source = this.drag.source;
     this.finishDrag();
     if (accepted) {
@@ -518,6 +514,28 @@ export class PuzzleApp {
     const width = Number.parseFloat(this.drag.preview.style.width);
     const height = Number.parseFloat(this.drag.preview.style.height);
     this.drag.preview.style.transform = `translate3d(${clientX - width / 2}px, ${clientY - height / 2 + this.drag.yOffset}px, 0)`;
+    this.showDropTarget(this.draggedCellAt(clientX, clientY));
+  }
+
+  private draggedCellAt(clientX: number, clientY: number): GridCell | undefined {
+    if (!this.drag || !this.boardCanvas || !this.game) return undefined;
+    const rect = this.boardCanvas.getBoundingClientRect();
+    const difficulty = difficultyById(this.game.difficultyId);
+    return rasterizeBoardCell(clientX, clientY, this.drag.yOffset, rect, difficulty);
+  }
+
+  private showDropTarget(cell?: GridCell) {
+    const target = this.root.querySelector<HTMLElement>('.drop-target');
+    if (!target || !this.game || !cell) {
+      target?.classList.remove('visible');
+      return;
+    }
+    const difficulty = difficultyById(this.game.difficultyId);
+    target.style.left = `${(cell.col / difficulty.cols) * 100}%`;
+    target.style.top = `${(cell.row / difficulty.rows) * 100}%`;
+    target.style.width = `${100 / difficulty.cols}%`;
+    target.style.height = `${100 / difficulty.rows}%`;
+    target.classList.add('visible');
   }
 
   private finishDrag() {
@@ -528,6 +546,7 @@ export class PuzzleApp {
     source.removeEventListener('pointerup', this.onDragEnd);
     source.removeEventListener('pointercancel', this.onDragCancel);
     preview.remove();
+    this.showDropTarget();
     this.boardFrame?.classList.remove('drag-active');
     this.drag = undefined;
   }

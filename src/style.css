@@ -372,6 +372,8 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 .board-tools button.active { background: #dff7ef; box-shadow: 0 4px 0 #92cabc, 0 7px 14px #326f5e20; }
 .hint-target { position: absolute; z-index: 2; border: 4px solid #ffd43d; border-radius: 35%; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 7px #ffcf32); transform: scale(0.65); }
 .hint-target.visible { opacity: 1; animation: hint-pulse 850ms ease-in-out infinite alternate; }
+.drop-target { position: absolute; z-index: 3; border: 3px solid rgba(72, 66, 57, 0.72); border-radius: 5px; background: rgba(255, 255, 255, 0.2); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 5px rgba(48, 40, 28, 0.18); opacity: 0; pointer-events: none; transition: opacity 80ms ease; }
+.drop-target.visible { opacity: 1; }
 
 .piece-tray {
   position: relative;

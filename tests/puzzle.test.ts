@@ -3,9 +3,8 @@ import {
   DIFFICULTIES,
   createPuzzlePieces,
   isPuzzleComplete,
-  isWithinSnap,
+  rasterizeBoardCell,
   shuffleIds,
-  snapDistance,
 } from '../src/puzzle';
 
 describe('jigsaw generation', () => {
@@ -58,13 +57,28 @@ describe('tray ordering', () => {
   });
 });
 
-describe('forgiving placement', () => {
-  it('keeps a useful minimum target size for high piece counts', () => {
-    expect(snapDistance(40, 38)).toBeGreaterThanOrEqual(28);
-    expect(isWithinSnap(120, 120, 145, 120, 40, 38)).toBe(true);
-    expect(isWithinSnap(100, 100, 145, 145, 40, 38)).toBe(false);
+describe('board cell rasterization', () => {
+  const bounds = { left: 20, top: 30, width: 600, height: 400 };
+  const grid = { rows: 4, cols: 6 };
+
+  it('uses the visual center of an offset drag preview', () => {
+    expect(rasterizeBoardCell(270, 222, -42, bounds, grid)).toEqual({ row: 1, col: 2 });
   });
 
+  it('maps positions equally near the top and bottom of a cell', () => {
+    expect(rasterizeBoardCell(270, 177, -42, bounds, grid)).toEqual({ row: 1, col: 2 });
+    expect(rasterizeBoardCell(270, 267, -42, bounds, grid)).toEqual({ row: 1, col: 2 });
+  });
+
+  it('switches at exact cell boundaries and rejects positions outside the board', () => {
+    expect(rasterizeBoardCell(220, 172, -42, bounds, grid)).toEqual({ row: 1, col: 2 });
+    expect(rasterizeBoardCell(219.9, 172, -42, bounds, grid)).toEqual({ row: 1, col: 1 });
+    expect(rasterizeBoardCell(620, 172, -42, bounds, grid)).toBeUndefined();
+    expect(rasterizeBoardCell(270, 71.9, -42, bounds, grid)).toBeUndefined();
+  });
+});
+
+describe('puzzle completion', () => {
   it('only completes when every piece is placed', () => {
     expect(isPuzzleComplete(23, 24)).toBe(false);
     expect(isPuzzleComplete(24, 24)).toBe(true);

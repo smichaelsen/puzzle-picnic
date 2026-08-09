@@ -15,6 +15,18 @@ export interface GridSize {
   cols: number;
 }
 
+export interface GridCell {
+  row: number;
+  col: number;
+}
+
+export interface BoardBounds {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+}
+
 export const DIFFICULTIES = [
   { id: 'gentle', label: 'Little Explorer', note: 'Big pieces', pieces: 24, rows: 4, cols: 6, icon: '🌱' },
   { id: 'brave', label: 'Puzzle Pro', note: 'A fun challenge', pieces: 96, rows: 8, cols: 12, icon: '🌻' },
@@ -169,19 +181,32 @@ export function shuffleIds(ids: number[], seed: string): number[] {
   return shuffled;
 }
 
-export function snapDistance(cellWidth: number, cellHeight: number): number {
-  return Math.max(28, Math.min(cellWidth, cellHeight) * 0.82);
-}
+export function rasterizeBoardCell(
+  pointerX: number,
+  pointerY: number,
+  previewOffsetY: number,
+  bounds: BoardBounds,
+  grid: GridSize,
+): GridCell | undefined {
+  const x = pointerX - bounds.left;
+  const y = pointerY + previewOffsetY - bounds.top;
+  if (
+    bounds.width <= 0 ||
+    bounds.height <= 0 ||
+    grid.rows < 1 ||
+    grid.cols < 1 ||
+    x < 0 ||
+    y < 0 ||
+    x >= bounds.width ||
+    y >= bounds.height
+  ) {
+    return undefined;
+  }
 
-export function isWithinSnap(
-  currentX: number,
-  currentY: number,
-  targetX: number,
-  targetY: number,
-  cellWidth: number,
-  cellHeight: number,
-): boolean {
-  return Math.hypot(currentX - targetX, currentY - targetY) <= snapDistance(cellWidth, cellHeight);
+  return {
+    row: Math.floor((y / bounds.height) * grid.rows),
+    col: Math.floor((x / bounds.width) * grid.cols),
+  };
 }
 
 export function isPuzzleComplete(placedCount: number, totalPieces: number): boolean {
