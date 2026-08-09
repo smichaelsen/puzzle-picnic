@@ -4,7 +4,7 @@ Puzzle Picnic has no third-party runtime artwork, icon packs, fonts, or sound fi
 
 ## Scene illustrations
 
-The twelve bundled scene illustrations were created specifically for this project on 9 August 2026 with OpenAI's built-in image-generation tool, using prompts written for this project. They are stored as static WebP files and no image-generation service is used during gameplay.
+The fifteen bundled scene illustrations were created specifically for this project on 9 and 10 August 2026 with OpenAI's built-in image-generation tool, using prompts written for this project. They are stored as static WebP files and no image-generation service is used during gameplay.
 
 - `public/scenes/seaside-friends.webp` — “Seaside Friends”
 - `public/scenes/moonlight-music.webp` — “Moonlight Music”
@@ -18,6 +18,9 @@ The twelve bundled scene illustrations were created specifically for this projec
 - `public/scenes/pancake-parade.webp` — “Pancake Parade,” energetic comic-book breakfast scene
 - `public/scenes/table-for-everyone.webp` — “Table for Everyone,” semi-realistic painterly garden feast
 - `public/scenes/flavor-mosaic.webp` — “Flavor Mosaic,” gently abstract geometric gouache still life
+- `public/scenes/mud-mountain-rally.webp` — “Mud Mountain Rally,” retro screen-print monster-truck scene
+- `public/scenes/dragon-meadow.webp` — “Dragon Meadow,” felted-wool and embroidery fantasy scene
+- `public/scenes/playtime-park.webp` — “Playtime Park,” isometric miniature 3D playground
 
 The prompts requested original, unbranded children's-book scenes and explicitly excluded copyrighted characters, logos, text, watermarks, and painted puzzle seams. The generated outputs are used under the rights granted to the project owner by the applicable OpenAI terms.
 

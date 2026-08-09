@@ -109,6 +109,30 @@ export const SCENES: Scene[] = [
     color: '#d8555c',
     emoji: '🍊',
   },
+  {
+    id: 'mud-mountain-rally',
+    title: 'Mud Mountain Rally',
+    subtitle: 'Roar across a muddy canyon course',
+    src: sceneAsset('mud-mountain-rally.webp'),
+    color: '#c45f32',
+    emoji: '🛻',
+  },
+  {
+    id: 'dragon-meadow',
+    title: 'Dragon Meadow',
+    subtitle: 'Meet the gentlest flyers in the hills',
+    src: sceneAsset('dragon-meadow.webp'),
+    color: '#7662a8',
+    emoji: '🐉',
+  },
+  {
+    id: 'playtime-park',
+    title: 'Playtime Park',
+    subtitle: 'Climb, swing and slide together',
+    src: sceneAsset('playtime-park.webp'),
+    color: '#249a91',
+    emoji: '🛝',
+  },
 ];
 
 export function sceneBuckets(): Scene[][] {
