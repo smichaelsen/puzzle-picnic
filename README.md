@@ -1,6 +1,6 @@
 # Puzzle Picnic
 
-A touch-first, offline-friendly browser jigsaw game for children. Choose one of nine original scenes and play with 24, 96, or 192 mathematically matched jigsaw pieces.
+A touch-first, offline-friendly browser jigsaw game for children. Choose one of twelve original scenes and play with 24, 96, or 192 mathematically matched jigsaw pieces.
 
 Play it at **https://smichaelsen.github.io/puzzle-picnic/**.
 

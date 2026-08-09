@@ -85,6 +85,30 @@ export const SCENES: Scene[] = [
     color: '#3768a7',
     emoji: '🌌',
   },
+  {
+    id: 'pancake-parade',
+    title: 'Pancake Parade',
+    subtitle: 'Flip up a comic breakfast feast',
+    src: sceneAsset('pancake-parade.webp'),
+    color: '#e76a35',
+    emoji: '🥞',
+  },
+  {
+    id: 'table-for-everyone',
+    title: 'Table for Everyone',
+    subtitle: 'Share a garden table full of food',
+    src: sceneAsset('table-for-everyone.webp'),
+    color: '#748b3d',
+    emoji: '🍽️',
+  },
+  {
+    id: 'flavor-mosaic',
+    title: 'Flavor Mosaic',
+    subtitle: 'Find patterns in every plate',
+    src: sceneAsset('flavor-mosaic.webp'),
+    color: '#d8555c',
+    emoji: '🍊',
+  },
 ];
 
 export function sceneBuckets(): Scene[][] {
