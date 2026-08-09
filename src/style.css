@@ -355,10 +355,11 @@ dialog::backdrop { background: rgba(41, 34, 29, 0.6); backdrop-filter: blur(5px)
 
 .board-frame {
   position: relative;
+  box-sizing: content-box;
   flex: none;
   overflow: hidden;
-  border: clamp(7px, 1vw, 12px) solid white;
-  border-radius: clamp(14px, 2vw, 22px);
+  border: 4px solid white;
+  border-radius: clamp(10px, 1.4vw, 16px);
   background: #f8f0da;
   box-shadow: 0 8px 0 #d6c19d, 0 15px 35px #5c472d35;
   transition: box-shadow 160ms ease, transform 160ms ease;

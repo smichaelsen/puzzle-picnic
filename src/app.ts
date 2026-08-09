@@ -322,9 +322,21 @@ export class PuzzleApp {
     if (!this.boardCanvas || !this.boardFrame) return;
     const stage = this.boardFrame.parentElement!;
     const stageRect = stage.getBoundingClientRect();
+    const stageStyle = window.getComputedStyle(stage);
+    const frameStyle = window.getComputedStyle(this.boardFrame);
     const tools = stage.querySelector('.board-tools')?.getBoundingClientRect().height ?? 0;
-    const maxWidth = Math.max(240, stageRect.width - 28);
-    const maxHeight = Math.max(180, stageRect.height - tools - 32);
+    const horizontalChrome =
+      Number.parseFloat(stageStyle.paddingLeft) +
+      Number.parseFloat(stageStyle.paddingRight) +
+      Number.parseFloat(frameStyle.borderLeftWidth) +
+      Number.parseFloat(frameStyle.borderRightWidth);
+    const verticalChrome =
+      Number.parseFloat(stageStyle.paddingTop) +
+      Number.parseFloat(stageStyle.paddingBottom) +
+      Number.parseFloat(frameStyle.borderTopWidth) +
+      Number.parseFloat(frameStyle.borderBottomWidth);
+    const maxWidth = Math.max(240, stageRect.width - horizontalChrome);
+    const maxHeight = Math.max(180, stageRect.height - tools - verticalChrome);
     const width = Math.floor(Math.min(maxWidth, (maxHeight * 4) / 3));
     const height = Math.floor((width * 3) / 4);
     this.boardFrame.style.width = `${width}px`;
