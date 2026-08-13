@@ -37,6 +37,9 @@ describe('scene progression', () => {
       false,
       false,
       false,
+      false,
+      false,
+      false,
     ]);
 
     solved.add(SCENES[0].id);
@@ -58,6 +61,11 @@ describe('scene progression', () => {
     expect(isSceneUnlocked(12, solved)).toBe(false);
     solved.add(SCENES[11].id);
     expect(isSceneUnlocked(12, solved)).toBe(true);
+
+    solved.add(SCENES[12].id);
+    expect(isSceneUnlocked(15, solved)).toBe(false);
+    solved.add(SCENES[14].id);
+    expect(isSceneUnlocked(15, solved)).toBe(true);
   });
 });
 

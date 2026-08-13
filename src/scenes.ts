@@ -133,6 +133,30 @@ export const SCENES: Scene[] = [
     color: '#249a91',
     emoji: '🛝',
   },
+  {
+    id: 'bumble-splash',
+    title: 'Bumble Splash',
+    subtitle: 'Dance through the garden spray',
+    src: sceneAsset('bumble-splash.webp'),
+    color: '#e3a516',
+    emoji: '🐝',
+  },
+  {
+    id: 'alpine-express',
+    title: 'Alpine Express',
+    subtitle: 'Ride the rails through the mountains',
+    src: sceneAsset('alpine-express.webp'),
+    color: '#237f7c',
+    emoji: '🚂',
+  },
+  {
+    id: 'rocket-sunrise',
+    title: 'Rocket Sunrise',
+    subtitle: 'Cheer a bright voyage to the stars',
+    src: sceneAsset('rocket-sunrise.webp'),
+    color: '#6b4bb7',
+    emoji: '🚀',
+  },
 ];
 
 export function sceneBuckets(): Scene[][] {

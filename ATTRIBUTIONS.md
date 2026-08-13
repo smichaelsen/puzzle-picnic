@@ -4,7 +4,7 @@ Puzzle Picnic has no third-party runtime artwork, icon packs, fonts, or sound fi
 
 ## Scene illustrations
 
-The fifteen bundled scene illustrations were created specifically for this project on 9 and 10 August 2026 with OpenAI's built-in image-generation tool, using prompts written for this project. They are stored as static WebP files and no image-generation service is used during gameplay.
+The eighteen bundled scene illustrations were created specifically for this project on 9, 10, and 13 August 2026 with OpenAI's built-in image-generation tool, using prompts written for this project. They are stored as static WebP files and no image-generation service is used during gameplay.
 
 - `public/scenes/seaside-friends.webp` — “Seaside Friends”
 - `public/scenes/moonlight-music.webp` — “Moonlight Music”
@@ -21,6 +21,9 @@ The fifteen bundled scene illustrations were created specifically for this proje
 - `public/scenes/mud-mountain-rally.webp` — “Mud Mountain Rally,” retro screen-print monster-truck scene
 - `public/scenes/dragon-meadow.webp` — “Dragon Meadow,” felted-wool and embroidery fantasy scene
 - `public/scenes/playtime-park.webp` — “Playtime Park,” isometric miniature 3D playground
+- `public/scenes/bumble-splash.webp` — “Bumble Splash,” crayon, watercolor, and wax-resist garden splash scene inspired by the project owner's bee-shaped paddling pool and its hose-powered antenna sprinklers
+- `public/scenes/alpine-express.webp` — “Alpine Express,” layered paper-quilling mountain railway with a continuous track and fenced station platform
+- `public/scenes/rocket-sunrise.webp` — “Rocket Sunrise,” luminous stained-glass and enamel spaceport scene
 
 The prompts requested original, unbranded children's-book scenes and explicitly excluded copyrighted characters, logos, text, watermarks, and painted puzzle seams. The generated outputs are used under the rights granted to the project owner by the applicable OpenAI terms.
 
