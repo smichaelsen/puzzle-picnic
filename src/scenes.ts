@@ -157,6 +157,30 @@ export const SCENES: Scene[] = [
     color: '#6b4bb7',
     emoji: '🚀',
   },
+  {
+    id: 'puddle-post',
+    title: 'Puddle Post',
+    subtitle: 'Race paper boats after the rain',
+    src: sceneAsset('puddle-post.webp'),
+    color: '#1d9aa6',
+    emoji: '☔',
+  },
+  {
+    id: 'clay-day-workshop',
+    title: 'Clay Day Workshop',
+    subtitle: 'Shape bright treasures together',
+    src: sceneAsset('clay-day-workshop.webp'),
+    color: '#b85e3d',
+    emoji: '🏺',
+  },
+  {
+    id: 'firehouse-helpers',
+    title: 'Firehouse Helpers',
+    subtitle: 'Practice teamwork at the firehouse',
+    src: sceneAsset('firehouse-helpers.webp'),
+    color: '#c84a32',
+    emoji: '🚒',
+  },
 ];
 
 export function sceneBuckets(): Scene[][] {

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document describes the eighteen scene illustrations currently included in Puzzle Picnic. It records their subjects, motifs, palettes, compositions, and artistic styles, then draws out the visual principles that connect the collection. It is intended as a practical starting point for commissioning or generating new artwork without narrowing the collection to one technique or one type of story.
+This document describes the twenty-one scene illustrations currently included in Puzzle Picnic. It records their subjects, motifs, palettes, compositions, and artistic styles, then draws out the visual principles that connect the collection. It is intended as a practical starting point for commissioning or generating new artwork without narrowing the collection to one technique or one type of story.
 
 The style terms below describe the appearance and visual language of each digital image. References to media such as gouache, felt, clay, or screen printing describe the simulated material character rather than a claim that the original was physically made in that medium.
 
@@ -32,10 +32,10 @@ The current works can be understood as five overlapping families.
 | Family | Character | Current examples |
 | --- | --- | --- |
 | Painterly storybook worlds | Soft modeling, expressive characters, atmospheric light, and familiar picture-book warmth | Seaside Friends, Moonlight Music, Sky Garden, Aurora Camp, Bumble Splash |
-| Handcrafted and tactile worlds | Visible or implied paper, clay, wool, thread, glass, or miniature-model materials | Coral Carnival, Little Moon Base, Dragon Meadow, Playtime Park, Alpine Express, Rocket Sunrise |
-| Print, drawing, and graphic worlds | Flattened space, assertive outlines, limited or designed color, and conspicuous mark-making | Market Morning, Mud Mountain Rally, Pancake Parade, Flavor Mosaic |
+| Handcrafted and tactile worlds | Visible or implied paper, clay, wool, thread, glass, wood, ceramics, or miniature-model materials | Coral Carnival, Little Moon Base, Dragon Meadow, Playtime Park, Alpine Express, Rocket Sunrise, Clay Day Workshop, Firehouse Helpers |
+| Print, drawing, and graphic worlds | Flattened space, assertive outlines, limited or designed color, and conspicuous mark-making | Market Morning, Mud Mountain Rally, Pancake Parade, Flavor Mosaic, Puddle Post |
 | Observational and scenic worlds | More naturalistic space, light, anatomy, objects, or food, while retaining an inviting illustrative finish | Pocket Raceway, Dinosaur Valley, Table for Everyone |
-| Abundant ensemble scenes | Many equal points of interest arranged across the image rather than one dominant protagonist | Coral Carnival, Market Morning, Pancake Parade, Table for Everyone, Playtime Park |
+| Abundant ensemble scenes | Many equal points of interest arranged across the image rather than one dominant protagonist | Coral Carnival, Market Morning, Pancake Parade, Table for Everyone, Playtime Park, Clay Day Workshop, Firehouse Helpers |
 
 These are not strict categories. The most interesting scenes often combine two families—for example, a naturalistic landscape with picture-book characters or a graphic layout with painterly texture.
 
@@ -221,6 +221,36 @@ These are not strict categories. The most interesting scenes often combine two f
 
 **Key motifs.** Rocket launch, young explorers, friendly robots, spaceport, stained glass, planets, teamwork, hopeful technology.
 
+### Puddle Post
+
+**Artwork.** Children in bright raincoats launch patterned paper boats into a rain-fed stream winding along a cobbled neighborhood lane. Umbrellas, puddle reflections, a bicycle, drainpipes, window watchers, flowers, snails, a frog, a dog, wet leaves, and a clearing rainbow turn the aftermath of a shower into a small shared expedition.
+
+**Style.** Layered five-ink risograph illustration. Slate blue, turquoise, coral, yellow, and violet appear as visibly separated translucent inks over warm fibrous paper. Halftone grain, stippling, simplified color shapes, and slight edge misregistration distinguish the print language from the smoother painterly scenes and the harder retro screen-print character of Mud Mountain Rally.
+
+**Visual character.** The reflective gutter stream creates a strong S-curve from the large foreground boats into the distant houses. Circular umbrellas and blocks of raincoat color provide bold landmarks against the pale paper ground. Dense flowers, masonry, reflections, and small creatures keep the corners active without obscuring the main boat race.
+
+**Key motifs.** Rainy neighborhood, paper boats, puddles, umbrellas, reflections, children together, snails, rainbow.
+
+### Clay Day Workshop
+
+**Artwork.** A multigenerational group shapes, stamps, paints, fires, and shares pottery in a busy community studio. An older maker guides a child at a wheel, children roll clay at a low table, a wheelchair user decorates a large vessel, and other makers work around a glowing central kiln. Shelves, tools, glaze jars, plants, handprints, patterned tiles, sculpted animals, bowls, mugs, and vases fill the workshop.
+
+**Style.** Glazed ceramic bas-relief. Rounded raised figures, incised contours, glossy pooled color, matte terracotta, subtle crackle, and shallow dimensional shadows make the entire scene appear modeled and fired as one large handcrafted tile. Its hard glazed surfaces are distinct from the soft clay-miniature finish of Little Moon Base.
+
+**Visual character.** The arched kiln acts as a warm symmetrical center, with throwing, modeling, decorating, and display zones arranged around it. Terracotta and cream unify the room while cobalt, turquoise, mustard, raspberry, and green glazes repeat across clothing, tools, and finished objects. Shelves and tables produce clear puzzle regions and abundant individual silhouettes.
+
+**Key motifs.** Pottery, community workshop, kiln, making together, generations, accessible craft, ceramics, handmade gifts.
+
+### Firehouse Helpers
+
+**Artwork.** A community fire brigade practices at a sunny station courtyard. Firefighters connect and coil hoses, consult a map, spray water into a striped practice barrel, and work together to bring a relaxed cat safely down from a leafy tree. Children and an older neighbor watch from behind a colorful rope barrier while a firehouse dog, pigeons, flowers, equipment, village roofs, and green hills extend the open-day story.
+
+**Style.** Carved wooden marquetry and intarsia illustration. Naturally grained veneers, painted and stained wood, beveled edges, incised details, peg-like joints, and layered relief give characters, foliage, water, architecture, and the fire engine the character of an elaborate wooden tableau.
+
+**Visual character.** The vermilion fire engine makes a strong horizontal anchor against honey and walnut wood. The ladder and tree create a balancing diagonal, while the looping hose and turquoise water arc connect foreground activity zones. Repeated yellow helmets, dark uniforms, flowers, and equipment distribute small landmarks around the dominant vehicle.
+
+**Key motifs.** Fire brigade, teamwork drill, cat rescue, fire engine, hoses, ladder, community open day, reassuring public service.
+
 ## Recurring motifs and narrative patterns
 
 ### Togetherness through activity
@@ -263,9 +293,10 @@ Compositions generally combine a large readable anchor with numerous smaller dis
 - Food, sharing, and community.
 - Water, gardens, mountains, and pastoral nature.
 - Fantasy, prehistory, space, railways, vehicles, and everyday play.
+- Rainy weather, community craft, and reassuring public-service teamwork.
 - Bright daylight, golden daylight, and luminous night.
-- Painterly, collage, drawing, print, clay, textile, gouache, wax-resist, paper-quilling, stained-glass, and 3D-miniature aesthetics.
-- Frontal storybook, overhead, elevated/isometric, and scenic aerial viewpoints.
+- Painterly, collage, drawing, print, clay, textile, gouache, wax-resist, paper-quilling, stained-glass, ceramic-relief, wood-marquetry, and 3D-miniature aesthetics.
+- Frontal storybook, overhead, elevated/isometric, scenic aerial, low journey, and cutaway viewpoints.
 
 ## Opportunities for expansion
 
@@ -273,14 +304,14 @@ Future scenes should add at least one genuinely new dimension—subject, environ
 
 Promising gaps include:
 
-- **Seasons and weather:** autumn rain, a snowy town, spring planting, puddle play, or a cozy storm viewed from shelter.
+- **Seasons and weather:** a snowy town, spring planting, windy weather, changing autumn leaves, or a cozy storm viewed from shelter.
 - **Habitats:** desert night, rainforest canopy, wetlands, caves, high mountains, or an insect-scale garden.
-- **Everyday making:** pottery studio, community workshop, sewing room, library, theatre rehearsal, or science fair.
+- **Everyday making:** a repair cafe, sewing room, library, theatre rehearsal, woodworking shop, or science fair.
 - **Celebration and performance:** lantern festival, outdoor dance, puppet show, kite gathering, or neighborhood parade, handled without culture-specific clichés.
-- **New visual media:** woodblock print, mosaic tile, paper marbling, paper quilling used for a non-landscape subject, crayon and wax resist used for a quieter mood, risograph, blocky low-poly 3D, ink line with limited wash, or ceramic and glaze effects.
+- **New visual media:** woodblock print, mosaic tile, paper marbling, paper quilling used for a non-landscape subject, crayon and wax resist used for a quieter mood, blocky low-poly 3D, ink line with limited wash, metal embossing, or woven basket effects.
 - **New viewpoints:** a cutaway building, side-on procession, close low-angle garden, symmetrical stage, or map-like journey.
 - **Quieter moods:** reading, observing wildlife, building something slowly, or resting after an adventure. Calm should still include enough visual landmarks for puzzle play.
-- **Human-centered worlds:** the collection includes children and hands, but most narrative characters are animals. More varied groups of children, families, ages, abilities, and appearances could broaden representation while retaining the same warm ensemble spirit.
+- **Human-centered worlds:** the collection now includes several varied groups of children and adults, but most narrative scenes still center animals. Families, teenagers, and older people in other everyday settings could broaden representation while retaining the same warm ensemble spirit.
 
 ## Guidance for new artwork
 
@@ -340,7 +371,7 @@ This proposal preserves collaboration, nature, color, and motion while adding a 
 Before adding a scene, ask:
 
 - Is the activity understandable without a title?
-- Does the image offer a fresh style or subject relative to the eighteen existing scenes?
+- Does the image offer a fresh style or subject relative to the twenty-one existing scenes?
 - Is there a focal anchor as well as detail throughout the frame?
 - Are the corners and broad background regions interesting enough to assemble?
 - Can major regions be distinguished by color, value, texture, or shape?
