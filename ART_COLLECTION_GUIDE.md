@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document describes the twenty-one scene illustrations currently included in Puzzle Picnic. It records their subjects, motifs, palettes, compositions, and artistic styles, then draws out the visual principles that connect the collection. It is intended as a practical starting point for commissioning or generating new artwork without narrowing the collection to one technique or one type of story.
+This document describes the twenty-four scene illustrations currently included in Puzzle Picnic. It records their subjects, motifs, palettes, compositions, and artistic styles, then draws out the visual principles that connect the collection. It is intended as a practical starting point for commissioning or generating new artwork without narrowing the collection to one technique or one type of story.
 
 The style terms below describe the appearance and visual language of each digital image. References to media such as gouache, felt, clay, or screen printing describe the simulated material character rather than a claim that the original was physically made in that medium.
 
@@ -251,6 +251,38 @@ These are not strict categories. The most interesting scenes often combine two f
 
 **Key motifs.** Fire brigade, teamwork drill, cat rescue, fire engine, hoses, ladder, community open day, reassuring public service.
 
+### Backflip Park
+
+**Artwork.** An RC monster truck hangs upside down above a curved launch ramp while smaller radio-controlled cars explore a colorful concrete skate park. People operate the trucks with handheld transmitters from the park's perimeter; only RC vehicles use the ramps. The supplied photo served only as an example of the stunt, not as the scene to reproduce.
+
+**Style.** Dynamic cel-shaded illustration with crisp contours, strongly modeled mechanical details, and clear areas of light and shadow.
+
+**Visual character.** The airborne red truck anchors the upper frame, with curved motion strokes connecting it to the ramp. Blue, orange, and yellow ramp panels lead through the scene. Planting, stonework, distant hills, and smaller cars provide local landmarks.
+
+**Collection contribution.** Brings radio-controlled stunts into a paved skate-park setting, distinct from the existing muddy monster-truck rally.
+
+### Indoor Adventure
+
+**Artwork.** Children explore a multilevel indoor soft-play structure with netted platforms, padded stairs, a windowed tunnel, a bright slide, climbing holds, and a ball pit. Foam blocks and animal-shaped play cushions fill the foreground.
+
+**Style.** Chalk-pastel and colored-pencil picture-book illustration with visible hatching and soft, textured shading.
+
+**Visual character.** A yellow slide forms the focal curve amid blue, green, purple, and coral padding. The grid of safety nets contrasts with rounded balls and tunnels, making distinct puzzle regions throughout the frame.
+
+**Collection contribution.** Adds an indoor play environment and a close, immersive viewpoint to complement the outdoor Playtime Park.
+
+### Lake Discoveries
+
+**Artwork.** Sailboats and a wooden rowboat float on a tree-lined freshwater lake. A cutaway waterline reveals large fish, small schooling fish, aquatic plants, submerged wood, and rounded lakebed stones. Reeds, a jetty, a cabin, and a waterbird enrich the shore and surface.
+
+**Style.** Glazed-tile mosaic with irregular tesserae, fine grout, and flowing arrangements that describe ripples, scales, trees, and stones.
+
+**Visual character.** Cool blue and turquoise water links the surface and underwater worlds. Warm sails and wood contrast with green fish and plants; large fish silhouettes organize the detailed tile texture below.
+
+**Collection contribution.** Adds a freshwater above-and-below-water view and a mosaic material treatment distinct from the marine scenes.
+
+Exact generation prompts for these three scenes are in [September 2026 scene prompts](docs/scene-prompts-september-2026.md).
+
 ## Recurring motifs and narrative patterns
 
 ### Togetherness through activity
@@ -371,7 +403,7 @@ This proposal preserves collaboration, nature, color, and motion while adding a 
 Before adding a scene, ask:
 
 - Is the activity understandable without a title?
-- Does the image offer a fresh style or subject relative to the twenty-one existing scenes?
+- Does the image offer a fresh style or subject relative to the twenty-four existing scenes?
 - Is there a focal anchor as well as detail throughout the frame?
 - Are the corners and broad background regions interesting enough to assemble?
 - Can major regions be distinguished by color, value, texture, or shape?

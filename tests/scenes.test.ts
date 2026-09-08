@@ -22,27 +22,8 @@ describe('scene progression', () => {
     const solved = new Set<string>();
 
     expect(SCENES.map((_, index) => isSceneUnlocked(index, solved))).toEqual([
-      true,
-      true,
-      true,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
+      ...Array<boolean>(3).fill(true),
+      ...Array<boolean>(SCENES.length - 3).fill(false),
     ]);
 
     solved.add(SCENES[0].id);
@@ -74,6 +55,12 @@ describe('scene progression', () => {
     expect(isSceneUnlocked(18, solved)).toBe(false);
     solved.add(SCENES[17].id);
     expect(isSceneUnlocked(18, solved)).toBe(true);
+
+    for (const index of [21, 22, 23]) expect(isSceneUnlocked(index, solved)).toBe(false);
+    solved.add(SCENES[18].id);
+    for (const index of [21, 22, 23]) expect(isSceneUnlocked(index, solved)).toBe(false);
+    solved.add(SCENES[20].id);
+    for (const index of [21, 22, 23]) expect(isSceneUnlocked(index, solved)).toBe(true);
   });
 });
 
