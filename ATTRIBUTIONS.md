@@ -4,7 +4,7 @@ Puzzle Picnic has no third-party runtime artwork, icon packs, fonts, or sound fi
 
 ## Scene illustrations
 
-The twenty-one bundled scene illustrations were created specifically for this project on 9, 10, and 13 August 2026 with OpenAI's built-in image-generation tool, using prompts written for this project. They are stored as static WebP files and no image-generation service is used during gameplay.
+The twenty-four bundled scene illustrations were created specifically for this project on 9, 10, and 13 August and 8 September 2026 with OpenAI's built-in image-generation tool, using prompts written for this project. They are stored as static WebP files and no image-generation service is used during gameplay.
 
 - `public/scenes/seaside-friends.webp` — “Seaside Friends”
 - `public/scenes/moonlight-music.webp` — “Moonlight Music”
@@ -27,6 +27,11 @@ The twenty-one bundled scene illustrations were created specifically for this pr
 - `public/scenes/puddle-post.webp` — “Puddle Post,” layered five-ink risograph paper-boat scene
 - `public/scenes/clay-day-workshop.webp` — “Clay Day Workshop,” glazed ceramic bas-relief pottery studio
 - `public/scenes/firehouse-helpers.webp` — “Firehouse Helpers,” carved wooden marquetry community fire-brigade drill
+- `public/scenes/backflip-park.webp` — “Backflip Park,” cel-shaded skate park with a monster truck mid-backflip and people operating the RC cars with handheld remotes; the owner's reference photo informed the stunt only, not the setting or people
+- `public/scenes/indoor-adventure.webp` — “Indoor Adventure,” chalk-pastel and colored-pencil indoor soft-play playground
+- `public/scenes/lake-discoveries.webp` — “Lake Discoveries,” glazed-tile mosaic freshwater lake cutaway with boats above and fish below
+
+The exact prompts for the September additions are recorded in [September 2026 scene prompts](docs/scene-prompts-september-2026.md).
 
 The prompts requested original, unbranded children's-book scenes and explicitly excluded copyrighted characters, logos, text, watermarks, and painted puzzle seams. The generated outputs are used under the rights granted to the project owner by the applicable OpenAI terms.
 

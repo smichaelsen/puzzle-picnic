@@ -181,6 +181,30 @@ export const SCENES: Scene[] = [
     color: '#c84a32',
     emoji: '🚒',
   },
+  {
+    id: 'backflip-park',
+    title: 'Backflip Park',
+    subtitle: 'Send tiny trucks into a mighty flip',
+    src: sceneAsset('backflip-park.webp'),
+    color: '#e87925',
+    emoji: '🛻',
+  },
+  {
+    id: 'indoor-adventure',
+    title: 'Indoor Adventure',
+    subtitle: 'Explore tunnels, slides and soft play',
+    src: sceneAsset('indoor-adventure.webp'),
+    color: '#c66b96',
+    emoji: '🛝',
+  },
+  {
+    id: 'lake-discoveries',
+    title: 'Lake Discoveries',
+    subtitle: 'Find boats above and fish below',
+    src: sceneAsset('lake-discoveries.webp'),
+    color: '#258c9c',
+    emoji: '🐟',
+  },
 ];
 
 export function sceneBuckets(): Scene[][] {
